@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+matadata:
+  name: redis-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    # so the service knows what kind of pods it is managing access to
+    component: redis
+  ports:
+    - port: 6379
+      targetPort: 6379
+      
